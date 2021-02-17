@@ -1,0 +1,124 @@
+.scroll-down,.scroll-up,.scroll-left,.scroll-right{
+    outline: none;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #f1ecec;
+    // opacity: 0.5;
+    &:hover{
+        opacity: 0.6;
+        cursor: pointer;
+    }
+}
+
+.cover-page-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+     width: 98vw;
+    height:100vh;
+
+      img{
+        width: 40vw;
+        height: auto;
+        max-height:450px;
+        max-width:350px;
+      }
+
+      .span-introduction{
+          padding: 8px;
+          font-size: 1.5rem;
+          color: #f1ecec;
+      }
+      .blinker{
+          animation: blinking 500ms infinite;
+      }
+
+      .view-my-profile{
+        transition: background-color 150ms ease;
+        background: transparent;
+        border: 2px solid #f1ecec;
+        color: #f1ecec;
+        padding: 12px 8px;
+        font-size: 1.25rem;
+        outline: none;
+        &:hover{
+            cursor: pointer;
+            background: #f1ecec;
+            color: black;
+            .fa-arrow-right{
+                transform: rotate(90deg);
+            }
+        }
+
+        .fa-arrow-right{
+            transition: transform 300ms ease;
+            font-weight: 100;
+            margin-left: 8px;
+        }
+    }
+}
+
+
+
+@keyframes blinking{
+    from{
+        opacity: 0
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.left-profile{
+    color: black;
+    a{
+        width: fit-content;
+        color: black;
+        font-size: inherit;
+    }
+    .fa-envelope, .fa-phone-square{
+        cursor: pointer;
+    }
+    ::after{
+        content: '';
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 12%;
+        right: -15px;
+        background: #201834;
+        transform: rotate(45deg)
+    }
+}
+
+.accordion-buttton{
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border:none;
+}
+
+.accordion-container{
+    overflow: hidden;
+    button{
+        overflow: hidden;
+        transition: background-color 200ms linear ;
+        padding: 12px;
+        min-height: 75px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        width: 100%;
+    }
+    .accordion-content{
+        overflow: hidden;
+        transition: height 200ms ease-in-out;
+    }
+}
+
+.timeline{
+    padding: 10px 20px;
+}

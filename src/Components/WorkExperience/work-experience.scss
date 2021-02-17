@@ -1,0 +1,46 @@
+.experience-container{
+    display: grid;
+    grid-template-rows: 1fr 2px 1fr;
+    // width:100vw;
+    height:calc(100% - 150px - 45px);
+    overflow: auto;
+    .line-break{
+        >div{
+        height: 2px; 
+        background: white;
+        }
+        padding: 0 20% 0  20%;
+        margin-bottom: 24px;
+    }
+    section{
+        margin: 24px 0;
+    }
+    p{
+        margin: 12px;
+    }
+    i{
+        color: white;
+    }
+
+    .current-company, .previous-company1{
+        display: flex;
+
+        img{
+            background:white;
+            height: 100px;
+            width: 400px;
+        }
+        .company-experience-description{
+            div{
+                display: flex;
+                align-items: center;
+            }
+        }
+        .company-logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+}
