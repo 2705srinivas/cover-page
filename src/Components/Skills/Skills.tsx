@@ -2,12 +2,13 @@ import React, {useRef, useState} from "react"
 import "./skills.scss"
 import "../styles.scss"
 import { skill_data } from "./skill-data"
+import { ProgressCluster } from "./ProgressCluster"
 
-type ViewType = "Grid" | "Slide"
+type ViewType = "Grid" | "Slide" | "Scale"
 
 export const Skills = () => {
     const scrollContainerRef = useRef<any>(null)
-    const [view, setView] = useState("Slide" as ViewType)
+    const [view, setView] = useState("Scale" as ViewType)
 
     const performButttonScroll = (direction: string) => {
         const totalScroll = scrollContainerRef.current.scrollWidth;
@@ -57,30 +58,39 @@ export const Skills = () => {
         </div>))} 
     </>)
 
+    const ViewType = () => {
+        switch(view){
+            case 'Grid':
+                return (<div className="skill-cards-grid-container">
+                            <SkillCards />
+                        </div>)
+            case 'Slide':
+                return (<>
+                    <button className="scroll-left" style={{width:"30px"}} onClick={()=>performButttonScroll("left")}>
+                        <i className="fa fa-arrow-left" aria-hidden="true"></i>
+                    </button>
+                    <div className="skill-cards-scroll-container" ref={scrollContainerRef}>
+                        <SkillCards />
+                    </div>
+                    <button className="scroll-right" style={{width:"30px"}} onClick={()=>performButttonScroll("right")}>
+                        <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button></>)
+            case 'Scale':
+                return(<ProgressCluster />)
+        }
+    }
+
     return(
         <section id="skill-id" className="skill-container">
             <div className="skill-cards-outer">
                 <h1 style={{fontWeight: 'lighter', fontSize:"4rem", padding: '8px', margin: "0"}}>Skills</h1>
                 <div className="view-toggle" >
+                    <i data-tip="Scale" onClick={()=>setView("Scale")} className={`fa fa-tasks ${view==="Scale" ? 'selected': ''}`} aria-hidden="true"></i>
                     <i data-tip="Grid" onClick={()=>setView("Grid")} className={`fa fa-th-large ${view==="Grid" ? 'selected': ''}`} aria-hidden="true"></i>
                     <i data-tip="Slide" onClick={()=>setView("Slide")} className={`fa fa-sliders ${view==="Slide" ? 'selected': ''}`} aria-hidden="true"></i>
                 </div>
                 <div style={{display: "flex"}} >
-                    {view === "Grid" ? (
-                        <div className="skill-cards-grid-container">
-                            <SkillCards />
-                        </div>
-                        ) : (<>
-                        <button className="scroll-left" style={{width:"30px"}} onClick={()=>performButttonScroll("left")}>
-                            <i className="fa fa-arrow-left" aria-hidden="true"></i>
-                        </button>
-                        <div className="skill-cards-scroll-container" ref={scrollContainerRef}>
-                            <SkillCards />
-                        </div>
-                        <button className="scroll-right" style={{width:"30px"}} onClick={()=>performButttonScroll("right")}>
-                            <i className="fa fa-arrow-right" aria-hidden="true"></i>
-                        </button></>
-                    )}
+                    {ViewType()}
                 </div>
             </div>
         </section>

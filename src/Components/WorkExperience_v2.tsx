@@ -9,21 +9,21 @@ const ExperienceCard = (props: any) => {
     return(
         <div className='experience' style={{padding:'32px', textAlign:'left', color:'white'}}>
             <div ><strong>{experiences[props.company]["Project Name"]}</strong></div>
-            <div>Redesign project is revamp of the existing legacy UI. It's also considered to be re-architecting frontend to use best practices available out there. Developed using React as base framework/library.</div>
+            <div>{experiences[props.company]["Project Description"]}</div>
             <br />
             <div>
                 <strong>Experience : </strong>
                 {experiences[props.company]["Experience"]}
             </div>
             <br />
-            <div><strong>Libraries/Utils Used : </strong>React, Redux, Redux-Saga, StyledComponents, Docker, Jenkins, React Leaflet</div>
+            {experiences[props.company]["Libraries/Utils Used"] && <div><strong>Libraries/Utils Used : </strong>{experiences[props.company]["Libraries/Utils Used"]}</div>}
         </div>
     )
 }
 
 const LeftSection = () => (
     <div className='left-profile' style={{width: '35%', background: '#f1ecec', padding: '20px',
-            display:'flex', flexDirection:'column', alignItems:'center', position: 'relative'}}>
+            display:'flex', flexDirection:'column', alignItems:'center', position: 'relative', overflow:'auto'}}>
         <img style={{height: 'auto', width: '50%', borderRadius:'500px'}} alt='profilePic' src='./images/ProfilePic.jpg'></img>
         <div className='flex' style={{color: '#201834', fontSize: '1.5rem', padding: '8px'}}>
             <Contacts />
@@ -38,7 +38,7 @@ const LeftSection = () => (
                     >https://www.npmjs.com/package/svelte-scroll-infinite-list</a>
                 </li>
                 <li style={{wordBreak:"break-word"}}>Svelte-typing-animated - 
-                    <a href='https://www.npmjs.com/package/svelte-scroll-infinite-list' 
+                    <a href='https://www.npmjs.com/package/svelte-typing-animated' 
                         style={{color: 'black'}}
                         target="blank"
                     >https://www.npmjs.com/package/svelte-typing-animated</a>
@@ -51,19 +51,19 @@ const RightSection = () => (
     <div style={{overflow:'auto'}}>
         <h1 style={{fontWeight: 'lighter', fontSize:"4rem", padding: '8px', margin: "0"}}>Work Experience</h1>
         <div style={{display:'flex'}} className='timeline'>
-            <AccordionV2 logo={experiences["Byjus"]["Logo"]} designation={experiences["Byjus"]["Role"]} span={experiences["Byjus"]["Span"]}>
+            <AccordionV2 company="Byjus">
                 <ExperienceCard company="Byjus"/>
             </AccordionV2>
         </div>
 
         <div style={{display:'flex'}} className='timeline'>
-        <AccordionV2 logo={experiences["FourKites"]["Logo"]} designation={experiences["FourKites"]["Role"]} span={experiences["FourKites"]["Span"]}>
+        <AccordionV2 company="FourKites">
             <ExperienceCard company="FourKites"/>
         </AccordionV2>
         </div>
 
         <div style={{display:'flex'}} className='timeline'>
-        <AccordionV2 logo={experiences["Temenos"]["Logo"]} designation={experiences["Temenos"]["Role"]} span={experiences["Temenos"]["Span"]}>
+        <AccordionV2 company="Temenos">
             <ExperienceCard company="Temenos"/>
         </AccordionV2>
         </div>
