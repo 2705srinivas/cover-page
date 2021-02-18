@@ -37,6 +37,12 @@ const LeftSection = () => (
                         target="blank"
                     >https://www.npmjs.com/package/svelte-scroll-infinite-list</a>
                 </li>
+                <li style={{wordBreak:"break-word"}}>Svelte-typing-animated - 
+                    <a href='https://www.npmjs.com/package/svelte-scroll-infinite-list' 
+                        style={{color: 'black'}}
+                        target="blank"
+                    >https://www.npmjs.com/package/svelte-typing-animated</a>
+                </li>
             </ul>
         </div>
     </div>

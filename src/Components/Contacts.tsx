@@ -13,5 +13,8 @@ export const Contacts = () => {
         <CopyToClipboard text="9739274808">
             <i onClick={() => {toast.success("phone no. copied!")}} data-tip="9739274808" style={{marginRight: '8px'}} className="fa fa-phone-square" aria-hidden="true"></i>
         </CopyToClipboard>
+        <a data-tip="GitHub" href="https://github.com/2705srinivas" target="blank">
+            <i className="fa fa-github-square" aria-hidden="true"></i>
+        </a>
     </>)
 }
