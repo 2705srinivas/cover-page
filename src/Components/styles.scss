@@ -122,3 +122,12 @@
 .timeline{
     padding: 10px 20px;
 }
+
+.experience-flex-item{
+    cursor: pointer;
+    transition: top 200ms linear;
+    top: 0;
+    &:hover{
+        top: -5px;
+    }
+}
