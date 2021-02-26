@@ -4,7 +4,7 @@
     border: none;
     font-size: 1.25rem;
     font-weight: bold;
-    color: #f1ecec;
+    color: var(--text-color);
     // opacity: 0.5;
     &:hover{
         opacity: 0.6;
@@ -29,7 +29,7 @@
       .span-introduction{
           padding: 8px;
           font-size: 1.5rem;
-          color: #f1ecec;
+          color: var(--text-color);
       }
       .blinker{
           animation: blinking 500ms infinite;
@@ -38,15 +38,15 @@
       .view-my-profile{
         transition: background-color 150ms ease;
         background: transparent;
-        border: 2px solid #f1ecec;
-        color: #f1ecec;
+        border: 2px solid var(--text-color);
+        color: var(--text-color);
         padding: 12px 8px;
         font-size: 1.25rem;
         outline: none;
         &:hover{
             cursor: pointer;
-            background: #f1ecec;
-            color: black;
+            background: var(--text-color);
+            color: var(--page-background);
             .fa-arrow-right{
                 transform: rotate(90deg);
             }
@@ -72,10 +72,10 @@
 }
 
 .left-profile{
-    color: black;
-    a{
+    color: var(--page-background);
+    a, i{
         width: fit-content;
-        color: black;
+        color: var(--page-background);
         font-size: inherit;
     }
     .fa-envelope, .fa-phone-square{
@@ -88,14 +88,14 @@
         position: absolute;
         top: 12%;
         right: -15px;
-        background: #201834;
+        background-color: var(--page-background);
         transform: rotate(45deg)
     }
 }
 
 .accordion-buttton{
     background-color: transparent;
-    color: white;
+    color: var(--text-color);
     outline: none;
     border:none;
 }
@@ -130,4 +130,8 @@
     &:hover{
         top: -5px;
     }
+}
+
+.margin-right{
+    margin-right: 8px;
 }

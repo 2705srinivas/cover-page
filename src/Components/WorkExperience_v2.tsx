@@ -7,7 +7,7 @@ import { Contacts } from './Contacts';
 
 const ExperienceCard = (props: any) => {
     return(
-        <div className='experience' style={{padding:'32px', textAlign:'left', color:'white'}}>
+        <div className='experience' style={{padding:'32px', textAlign:'left', color:'var(--text-color)'}}>
             <div ><strong>{experiences[props.company]["Project Name"]}</strong></div>
             <div>{experiences[props.company]["Project Description"]}</div>
             <br />
@@ -22,24 +22,24 @@ const ExperienceCard = (props: any) => {
 }
 
 const LeftSection = () => (
-    <div className='left-profile' style={{width: '35%', background: '#f1ecec', padding: '20px',
+    <div className='left-profile' style={{width: '35%', background: 'var(--text-color)', padding: '20px',
             display:'flex', flexDirection:'column', alignItems:'center', position: 'relative', overflow:'auto'}}>
         <img style={{height: 'auto', width: '50%', borderRadius:'500px'}} alt='profilePic' src='./images/ProfilePic.jpg'></img>
         <div className='flex' style={{color: '#201834', fontSize: '1.5rem', padding: '8px'}}>
             <Contacts />
         </div>
-        <div style={{color: 'black', textAlign: 'left', marginTop: '16px'}}>
+        <div style={{color: 'var(--page-background)', textAlign: 'left', marginTop: '16px'}}>
             <strong>Open Source Contributions:</strong>
             <ul>
                 <li style={{wordBreak:"break-word"}}>Infinite-virtual-scroll - 
                     <a href='https://www.npmjs.com/package/svelte-scroll-infinite-list' 
-                        style={{color: 'black'}}
+                        style={{color: 'var(--page-background)'}}
                         target="blank"
                     >https://www.npmjs.com/package/svelte-scroll-infinite-list</a>
                 </li>
                 <li style={{wordBreak:"break-word"}}>Svelte-typing-animated - 
                     <a href='https://www.npmjs.com/package/svelte-typing-animated' 
-                        style={{color: 'black'}}
+                        style={{color: 'var(--page-background)'}}
                         target="blank"
                     >https://www.npmjs.com/package/svelte-typing-animated</a>
                 </li>
@@ -77,7 +77,7 @@ const ExperienceFlexBox = () => {
         height: '100%',
         // backgroundColor: '#f1ecec',
         // minWidth:'45%', 
-        color:'black',
+        color:'var(--page-background)',
         flexBasis: '45%',
         margin: '12px',
         fontWeight: 'bold' as any,
@@ -91,27 +91,27 @@ const ExperienceFlexBox = () => {
             <div onClick={()=>{setSelected('Byjus')}} className="flex experience-flex-item" style={experienceFlexChild}>
                 <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/notebook_bg.jpg" />
                 <img style={{maxWidth:'50%', zIndex:2}} src={experiences["Byjus"]["Logo"]} alt=""/>
-                <div style={{color: '#f1ecec', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["Byjus"]["Span"]}</em></span></div>
-                <div style={{color:'#f1ecec', zIndex:2}} ><span><em>{experiences["Byjus"]["Business"]}</em></span></div>
-                <div style={{color: '#f1ecec', zIndex:2,fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences["Byjus"]["Role"]}</span></div>
+                <div style={{color: 'var(--text-color)', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["Byjus"]["Span"]}</em></span></div>
+                <div style={{color:'var(--text-color)', zIndex:2}} ><span><em>{experiences["Byjus"]["Business"]}</em></span></div>
+                <div style={{color: 'var(--text-color)', zIndex:2,fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences["Byjus"]["Role"]}</span></div>
             </div>
             <div onClick={()=>{setSelected('FourKites')}} className="flex experience-flex-item" style={experienceFlexChild}>
                 <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/freight_bg.jpg" />
                 <img style={{maxWidth:'50%', zIndex:2}} src={experiences["FourKites"]["Logo"]} alt=""/>
-                <div style={{color: '#f1ecec', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["FourKites"]["Span"]}</em></span></div>
-                <div style={{color:'#f1ecec', zIndex:2}} ><span><em>{experiences["FourKites"]["Business"]}</em></span></div>
-                <div style={{color: '#f1ecec', zIndex:2,fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences["FourKites"]["Role"]}</span></div>
+                <div style={{color: 'var(--text-color)', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["FourKites"]["Span"]}</em></span></div>
+                <div style={{color:'var(--text-color)', zIndex:2}} ><span><em>{experiences["FourKites"]["Business"]}</em></span></div>
+                <div style={{color: 'var(--text-color)', zIndex:2,fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences["FourKites"]["Role"]}</span></div>
             </div>
             <div onClick={()=>{setSelected('Temenos')}} className="flex experience-flex-item" style={experienceFlexChild}>
                 <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/banks_bg.jpg" />
                 <img style={{maxWidth:'50%', zIndex:2}} src={experiences["Temenos"]["Logo"]} alt=""/>
-                <div style={{color: '#f1ecec', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["Temenos"]["Span"]}</em></span></div>
-                <div style={{color:'#f1ecec', zIndex:2}} ><span><em>{experiences["Temenos"]["Business"]}</em></span></div>
-                <div style={{color: '#f1ecec', zIndex:2,fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences["Temenos"]["Role"]}</span></div>
+                <div style={{color: 'var(--text-color)', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["Temenos"]["Span"]}</em></span></div>
+                <div style={{color:'var(--text-color)', zIndex:2}} ><span><em>{experiences["Temenos"]["Business"]}</em></span></div>
+                <div style={{color: 'var(--text-color)', zIndex:2,fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences["Temenos"]["Role"]}</span></div>
             </div>
             {experienceSelected && (
             <div className="flex" style={{position:'absolute', zIndex:3, height: '100%'}}>
-                <div style={{backgroundColor: 'black', height:'80%', width:'80%', overflow:'auto'}}>
+                <div style={{backgroundColor: 'var(--page-background)', height:'80%', width:'80%', overflow:'auto'}}>
                     <ExperienceCard company={experienceSelected}/>
                 </div>
                 <i style={{top:'30px', right:'30px', position:'absolute', fontSize:'2rem', cursor:'pointer'}} onClick={()=>{setSelected('')}} className="fa fa-times-circle-o" aria-hidden="true"></i>

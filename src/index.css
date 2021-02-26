@@ -5,9 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:#11082bbf;
-  background-image: linear-gradient(rgba(17, 8, 43, 0.75),#0e0413bf);
-  /* background: linear-gradient(#ffffff, #e98b98); */
+  background-color: var(--page-background);
+  background-image: linear-gradient(var(--page-background),var(--gradient-color));
   scroll-behavior: smooth;
   height: 100vh;
   width: 100%;
@@ -21,7 +20,7 @@ html{
 body, div, p, a, nav{
   box-sizing: border-box;
   width: 100%;
-  color: #f1ecec;
+  color: var(--text-color);
   font-size: inherit;
 }
 
@@ -72,3 +71,14 @@ ul{
 body::-webkit-scrollbar {
   display: none;
 }
+
+  .light-theme{
+    --page-background: #f1ecec;
+    --text-color: #11082b;
+    --gradient-color: #aec8de;
+  }
+  .dark-theme{
+    --page-background: #11082b;
+    --text-color: #f1ecec;
+    --gradient-color: #0e0413bf;
+  }

@@ -33,7 +33,7 @@ export const AccordionV2 = ({children, company}: PropType) =>{
         <div className='accordion-container'>
             <button 
                 style={{
-                backgroundColor: !hide? 'rgb(132 50 99)' : '#f1ecec'}}
+                backgroundColor: !hide? 'rgb(132 50 99)' : 'var(--page-background)'}}
                 onMouseOver={() => onHover(false)} 
                 onMouseOut={() => onHover(true)}  
                 onClick={clickHandler} >
@@ -43,9 +43,9 @@ export const AccordionV2 = ({children, company}: PropType) =>{
                     }}>
                     <div className='flex' style={{position:'relative', flexWrap: 'wrap', justifyContent:'space-around'}}>
                         <img style={{width:'12%'}} src={experiences[company]["Logo"]} alt=""/>
-                        <div style={{color: !hide? 'white': 'black',width:'fit-content', margin:'0 12px'}}><span><em>{experiences[company]["Span"]}</em></span></div>
-                        <div style={{color: !hide? 'white': 'black', width: 'auto'}}><span><em>{experiences[company]["Business"]}</em></span></div>
-                        <div style={{color: !hide? 'white': 'black', fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences[company]["Role"]}</span></div>
+                        <div style={{color: !hide? 'var(--text-color)': 'var(--page-background)',width:'fit-content', margin:'0 12px'}}><span><em>{experiences[company]["Span"]}</em></span></div>
+                        <div style={{color: !hide? 'var(--text-color)': 'var(--page-background)', width: 'auto'}}><span><em>{experiences[company]["Business"]}</em></span></div>
+                        <div style={{color: !hide? 'var(--text-color)': 'var(--page-background)', fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences[company]["Role"]}</span></div>
                     </div>
                 </div>
                 <div ref={content} 

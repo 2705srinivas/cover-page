@@ -10,8 +10,8 @@
                 cursor: pointer;
                 padding: 2px;
                 &.selected{
-                    background-color: #f1ecec;
-                    color: black;
+                    background-color: var(--text-color);
+                    color: var(--page-background);
                 }
             }
         }
@@ -56,7 +56,7 @@
             }
             &:hover{
                 // cursor: pointer;
-                box-shadow: 2px 2px 4px 0px #f1ecec;
+                box-shadow: 2px 2px 4px 0px var(--text-color);
             }
             img{
                 width: 100%;
