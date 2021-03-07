@@ -9,6 +9,7 @@
 
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
+import { toast } from 'react-toastify';
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -41,7 +42,6 @@ export function register(config?: Config) {
 
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
@@ -66,6 +66,10 @@ function registerValidSW(swUrl: string, config?: Config) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+      if (registration.waiting){
+        config?.onUpdate?.(registration);
+      }
+
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
@@ -91,7 +95,7 @@ function registerValidSW(swUrl: string, config?: Config) {
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
               console.log('Content is cached for offline use.');
-
+              toast.success("Content is cached for offline use.")
               // Execute callback
               if (config && config.onSuccess) {
                 config.onSuccess(registration);
@@ -104,6 +108,13 @@ function registerValidSW(swUrl: string, config?: Config) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
     });
+
+    navigator.serviceWorker.addEventListener('controllerchange',
+      function(event) {
+        console.log("controllerchange", event)
+        window.location.reload();
+      }
+    );
 }
 
 function checkValidServiceWorker(swUrl: string, config?: Config) {
