@@ -3,7 +3,6 @@ import { AccordionV2 } from './Accordion_v2'
 import "./styles.scss"
 import {experiences} from "./WorkExperience/experince-data"
 import { Skills } from './Skills';
-import { Contacts } from './Contacts';
 
 const ExperienceCard = (props: any) => {
     return(
@@ -21,32 +20,6 @@ const ExperienceCard = (props: any) => {
     )
 }
 
-const LeftSection = () => (
-    <div className='left-profile' style={{width: '35%', background: 'var(--text-color)', padding: '20px',
-            display:'flex', flexDirection:'column', alignItems:'center', position: 'relative', overflow:'auto'}}>
-        <img style={{height: 'auto', width: '50%', borderRadius:'500px'}} alt='profilePic' src='./images/ProfilePic.jpg'></img>
-        <div className='flex' style={{color: '#201834', fontSize: '1.5rem', padding: '8px'}}>
-            <Contacts />
-        </div>
-        <div style={{color: 'var(--page-background)', textAlign: 'left', marginTop: '16px'}}>
-            <strong>Open Source Contributions:</strong>
-            <ul>
-                <li style={{wordBreak:"break-word"}}>Infinite-virtual-scroll - 
-                    <a href='https://www.npmjs.com/package/svelte-scroll-infinite-list' 
-                        style={{color: 'var(--page-background)'}}
-                        target="blank"
-                    >https://www.npmjs.com/package/svelte-scroll-infinite-list</a>
-                </li>
-                <li style={{wordBreak:"break-word"}}>Svelte-typing-animated - 
-                    <a href='https://www.npmjs.com/package/svelte-typing-animated' 
-                        style={{color: 'var(--page-background)'}}
-                        target="blank"
-                    >https://www.npmjs.com/package/svelte-typing-animated</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-)
 //eslint-disable-next-line
 const ExperienceAccordion = () => {
     return(<>
@@ -111,7 +84,8 @@ const ExperienceFlexBox = () => {
             </div>
             {experienceSelected && (
             <div className="flex" style={{position:'absolute', zIndex:3, height: '100%'}}>
-                <div style={{backgroundColor: 'var(--page-background)', height:'80%', width:'80%', overflow:'auto'}}>
+                <div style={{backgroundColor: 'var(--page-background)', maxHeight:'80%', 
+                width:'80%', overflow:'auto', border:"2px solid var(--text-color)", borderRadius:'10px'}}>
                     <ExperienceCard company={experienceSelected}/>
                 </div>
                 <i style={{top:'30px', right:'30px', position:'absolute', fontSize:'2rem', cursor:'pointer'}} onClick={()=>{setSelected('')}} className="fa fa-times-circle-o" aria-hidden="true"></i>
@@ -132,7 +106,7 @@ export const WorkExperience = () => {
     return(
         <section id="work-experience-id" style={{overflow: "none", height: "100vh"}}>
             <div style={{display: 'flex', height:'100%'}}>
-                <LeftSection />
+                {/* <LeftSection /> */}
                 <RightSection />
             </div>
         </section>

@@ -13,7 +13,7 @@ export const CoverPage = () => {
         setChecked(nextTheme)
     }
     return (
-        <div className='cover-page-container' >
+        <div id='home-id' className='cover-page-container' >
             <div style={{display:'flex', justifyContent:'flex-end', padding:'20px'}}>
                 <img alt='profilePic' src='./images/LinkedinDP.png'></img>
             </div>

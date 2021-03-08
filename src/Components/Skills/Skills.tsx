@@ -1,15 +1,18 @@
-import React, {useRef, useState} from "react"
+import React, {useEffect, useRef, useState} from "react"
 import "./skills.scss"
 import "../styles.scss"
 import { skill_data } from "./skill-data"
 import { ProgressCluster } from "./ProgressCluster"
+import ReactTooltip from 'react-tooltip'
 
 type ViewType = "Grid" | "Slide" | "Scale"
 
 export const Skills = () => {
     const scrollContainerRef = useRef<any>(null)
     const [view, setView] = useState("Scale" as ViewType)
-
+    useEffect(()=>{
+        ReactTooltip.rebuild();
+    },[view])
     const performButttonScroll = (direction: string) => {
         const totalScroll = scrollContainerRef.current.scrollWidth;
         const offSetWidth = scrollContainerRef.current.offsetWidth;

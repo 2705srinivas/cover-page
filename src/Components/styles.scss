@@ -81,15 +81,17 @@
     .fa-envelope, .fa-phone-square{
         cursor: pointer;
     }
-    ::after{
-        content: '';
-        height: 20px;
-        width: 20px;
-        position: absolute;
-        top: 12%;
-        right: -15px;
-        background-color: var(--page-background);
-        transform: rotate(45deg)
+    .profile{
+        ::after{
+            content: '';
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 97%;
+            left: 10%;
+            background-color: var(--page-background);
+            transform: rotate(45deg)
+        }
     }
 }
 

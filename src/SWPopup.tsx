@@ -17,6 +17,7 @@ export const SWPopup = () =>{
             console.log(event.data.msg, event.data.url);
           });
         serviceWorker.register(SWCallBcks);
+    //eslint-disable-next-line
     },[])      
 
     return (<>

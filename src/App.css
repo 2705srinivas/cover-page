@@ -76,6 +76,11 @@
   font-weight: 200;
 }
 
+.menu-item:hover{
+  color: var(--page-background);
+  background-color: var(--text-color);
+}
+
 @media only screen and (max-width: 768px) {
   .demo .main-title {
      font-size: 3em;
