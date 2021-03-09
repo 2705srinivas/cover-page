@@ -100,7 +100,7 @@
 .menu-item:hover .color-change{
   background: var(--text-color);
 }
-/* .menu-item::before{
+/* .arrow-before::before{
   content:'';
   background-color: transparent;
   position: absolute;

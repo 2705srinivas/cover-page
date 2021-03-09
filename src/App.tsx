@@ -46,12 +46,13 @@ const MenuBar = () => {
     </div>
     {open && <div style={{
       width:'fit-content', margin:'0 24px',userSelect:'none', 
-      display:'flex',height: '100%',border: 'solid white',
-      borderWidth: '1px 0'
-      //  ,borderTop:'1px solid white',borderBottom:'1px solid white'
+      display:'flex',height: '100%',border: 'solid var(--text-color)',
+      borderWidth: '1px 0 1px 1px'
       }}>  
       
-      <div className="menu-item" onClick={() => {scrollSmoothTo('home-id')}} ><RightArrow color={'var(--text-color)'}/>Home <RightArrow change color={'var(--text-color)'} right={'-8px'}/></div>
+      <div className="menu-item " onClick={() => {scrollSmoothTo('home-id')}} >
+        {/* <RightArrow color={'var(--text-color)'}/> */}
+        Home <RightArrow change color={'var(--text-color)'} right={'-8px'}/></div>
       
       <div className="menu-item" onClick={() => {scrollSmoothTo('work-experience-id')}} >Profile <RightArrow change color={'var(--text-color)'} right={'-8px'}/></div>
       
