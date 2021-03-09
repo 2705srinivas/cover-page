@@ -75,11 +75,44 @@
 .main-title .thin {
   font-weight: 200;
 }
-
-.menu-item:hover{
+.menu-item{
+  display: flex;
+  align-items: center;
+  /* border-bottom:1px solid var(--text-color); */
+  /* border-top:1px solid var(--text-color); */
+  /* margin-right: 14px;  */
+  cursor: pointer;
+  padding-left:16px;
+  padding-right: 14px;
+  position: relative;
+}
+.menu-item,.menu{
+  color: var(--text-color);
+  background-color: var(--page-background);
+}
+.menu-item:hover,.menu:hover{
   color: var(--page-background);
   background-color: var(--text-color);
 }
+.menu-item .color-change,.no-color-change{
+  background: var(--page-background);
+}
+.menu-item:hover .color-change{
+  background: var(--text-color);
+}
+/* .menu-item::before{
+  content:'';
+  background-color: transparent;
+  position: absolute;
+  border-top: 2px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  margin-right: 0;
+  margin-top: 4px;
+  margin-left: -32px;
+} */
 
 @media only screen and (max-width: 768px) {
   .demo .main-title {

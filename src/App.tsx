@@ -15,23 +15,47 @@ const ThemeWrapper = () => {
   return <></>
 }
 
+const RightArrow = (props: {change?: boolean,right?: string, color?: string } ) => {
+  return(
+    <div className={props.change? 'color-change' : 'no-color-change'} style={{height:0, width: 0, 
+      border:' solid ', 
+      // borderColor:'var(--text-color)',
+      borderColor: props.color ? props.color : 'transparent',
+      borderWidth:'0 2px 2px 0', 
+      padding:'16px 0px 0px 16px',transform: 'rotate(-45deg)',
+      left: props.right !== undefined ? 'auto' : '-7px',
+      right: props.right !== undefined ? props.right : 'auto',
+      // background: 'var(--page-background)',
+      // background: 'transparent',
+      position:'absolute',
+      zIndex: 2,
+    }}></div>)
+}
+
 const MenuBar = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const exceptionRef = useRef(true) as any
-  useClickOutside(exceptionRef, () => {setOpen(false)})
+  // useClickOutside(exceptionRef, () => {setOpen(false)})
 
   return(
-  <div style={{
-  position:'fixed', top: '32px', left: '32px', width:'fit-content', zIndex:3}}>
-    <div ref={exceptionRef}  style={{width:'fit-content', cursor:'pointer', backgroundColor:'var(--page-background)',
+  <div style={{position:'fixed', top: '32px', left: '32px', width:'fit-content', zIndex:3, display: 'flex', alignItems:'center'}}>
+    <div className="menu" ref={exceptionRef}  style={{width:'fit-content', cursor:'pointer',
     boxShadow:'0px 0px 4px 1px', padding:'2px 8px', fontSize: '20px', borderRadius:'50%'}}
     onClick={() => setOpen(!open)}>
-      <i className="fa fa-bars" aria-hidden="true"></i>
+      {open ? <i className="fa fa-close" aria-hidden="true"></i> :<i className="fa fa-bars" aria-hidden="true"></i>}
     </div>
-    {open && <div style={{width:'fit-content', margin:'2px 32px',boxShadow:'0px 0px 4px 1px',userSelect:'none', background:'var(--page-background)' }}>
-      <div className="menu-item" onClick={() => {scrollSmoothTo('home-id')}} style={{borderBottom:'1px solid var(--text-color)',padding:'4px', cursor:'pointer'}}>Home</div>
-      <div className="menu-item" onClick={() => {scrollSmoothTo('work-experience-id')}} style={{borderBottom:'1px solid var(--text-color)',padding:'4px', cursor:'pointer'}}>Profile</div>
-      <div className="menu-item" onClick={() => {scrollSmoothTo('about-id')}} style={{borderBottom:'1px solid var(--text-color)',padding:'4px', cursor:'pointer'}}>About</div>
+    {open && <div style={{
+      width:'fit-content', margin:'0 24px',userSelect:'none', 
+      display:'flex',height: '100%',border: 'solid white',
+      borderWidth: '1px 0'
+      //  ,borderTop:'1px solid white',borderBottom:'1px solid white'
+      }}>  
+      
+      <div className="menu-item" onClick={() => {scrollSmoothTo('home-id')}} ><RightArrow color={'var(--text-color)'}/>Home <RightArrow change color={'var(--text-color)'} right={'-8px'}/></div>
+      
+      <div className="menu-item" onClick={() => {scrollSmoothTo('work-experience-id')}} >Profile <RightArrow change color={'var(--text-color)'} right={'-8px'}/></div>
+      
+      <div className="menu-item" onClick={() => {scrollSmoothTo('about-id')}} >About<RightArrow change color={'var(--text-color)'} right={'-8px'}/></div>
     </div>}
   </div>)
 }
