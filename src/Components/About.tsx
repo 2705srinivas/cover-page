@@ -54,7 +54,9 @@ const BottomSection = () => {
 export const About = () => {
     return (
     <section id="about-id" style={{overflow: "auto", height: "100vh"}}>
-        <UpperSection />
-        <BottomSection />
+        <div style={{height: '100%'}}>
+            <UpperSection />
+            <BottomSection />
+        </div>
     </section>)
 }

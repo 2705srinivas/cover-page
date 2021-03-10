@@ -22,7 +22,7 @@ export const SWPopup = () =>{
 
     return (<>
     {showSWDialog ? <div style={{position:"fixed",  backgroundColor:"orange", color:"black",
-        padding: '8px',
+        padding: '8px', maxWidth: '80%', zIndex: 4,
         width: "fit-content", top: "70px", right: "50px"}}>
             Newer Version is available. Do you want to update? &nbsp;
             <i style={{textDecoration: 'underline', cursor: 'pointer'}} onClick={()=>{sw.current?.waiting.postMessage({type: 'SKIP_WAITING'})}}>Yes</i> | &nbsp;

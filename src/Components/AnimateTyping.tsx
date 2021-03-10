@@ -15,5 +15,5 @@ export const AnimateTyping = () => {
             }
         },[])
 
-    return (<span className='span-introduction'>{introStatement} <span className='blinker'>|</span> </span>)
+    return (<span style={{userSelect: 'none'}} className='span-introduction'>{introStatement} <span className='blinker'>|</span> </span>)
 }

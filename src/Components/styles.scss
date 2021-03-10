@@ -95,6 +95,26 @@
     }
 }
 
+.company-bg{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-position: center;
+    opacity: 0.7;
+    ::before{
+        display: block;
+        // width: 100%;
+        // height: 100%;
+        content: '';
+        opacity: .5;
+        background-image: linear-gradient(234deg,#394245,#000);
+    }
+}
+
 .accordion-buttton{
     background-color: transparent;
     color: var(--text-color);

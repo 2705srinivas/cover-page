@@ -5,7 +5,7 @@ import { CoverPage } from "./Components/CoverPage"
 import ReactTooltip from 'react-tooltip'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { toggleTheme, scrollSmoothTo, useClickOutside } from "./Utils"
+import { toggleTheme, scrollSmoothTo } from "./Utils"
 import { About } from './Components/About';
 
 const ThemeWrapper = () => {
@@ -21,8 +21,8 @@ const RightArrow = (props: {change?: boolean,right?: string, color?: string } ) 
       border:' solid ', 
       // borderColor:'var(--text-color)',
       borderColor: props.color ? props.color : 'transparent',
-      borderWidth:'0 2px 2px 0', 
-      padding:'16px 0px 0px 16px',transform: 'rotate(-45deg)',
+      borderWidth:'0 1px 1px 0', 
+      padding:'15px 0px 0px 14px',transform: 'rotate(-45deg)',
       left: props.right !== undefined ? 'auto' : '-7px',
       right: props.right !== undefined ? props.right : 'auto',
       // background: 'var(--page-background)',
@@ -38,14 +38,14 @@ const MenuBar = () => {
   // useClickOutside(exceptionRef, () => {setOpen(false)})
 
   return(
-  <div style={{position:'fixed', top: '32px', left: '32px', width:'fit-content', zIndex:3, display: 'flex', alignItems:'center'}}>
+  <div style={{position:'fixed', top: '8vh', left: '2.5vw', width:'fit-content', zIndex:3, display: 'flex', alignItems:'center'}}>
     <div className="menu" ref={exceptionRef}  style={{width:'fit-content', cursor:'pointer',
     boxShadow:'0px 0px 4px 1px', padding:'2px 8px', fontSize: '20px', borderRadius:'50%'}}
     onClick={() => setOpen(!open)}>
       {open ? <i className="fa fa-close" aria-hidden="true"></i> :<i className="fa fa-bars" aria-hidden="true"></i>}
     </div>
     {open && <div style={{
-      width:'fit-content', margin:'0 24px',userSelect:'none', 
+      width:'fit-content', margin:'0 4%',userSelect:'none', 
       display:'flex',height: '100%',border: 'solid var(--text-color)',
       borderWidth: '1px 0 1px 1px'
       }}>  
