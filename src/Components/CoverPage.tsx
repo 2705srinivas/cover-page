@@ -15,7 +15,7 @@ export const CoverPage = () => {
     return (
         <div id='home-id' className='cover-page-container' >
             <div style={{display:'flex', justifyContent:'flex-end', padding:'20px'}}>
-                <img alt='profilePic' src='./images/LinkedinDP.png'></img>
+                <img alt='profilePic' src='./images/LinkedinDP.jpeg'></img>
             </div>
             <div style={{display:'flex', flexDirection:'column',  padding:'20px'}}>
                 <AnimateTyping />

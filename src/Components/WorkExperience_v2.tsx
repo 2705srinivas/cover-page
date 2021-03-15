@@ -62,14 +62,14 @@ const ExperienceFlexBox = () => {
     return(
         <div style={{display: 'flex', flexWrap:'wrap',position:'relative'}}>
             <div onClick={()=>{setSelected('Byjus')}} className="flex experience-flex-item company-card" style={experienceFlexChild}>
-                <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/notebook_bg.jpg" />
+                <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/notebook_bg.jpeg" />
                 <img style={{maxWidth:'50%', zIndex:2}} src={experiences["Byjus"]["Logo"]} alt=""/>
                 <div style={{color: 'var(--text-color)', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["Byjus"]["Span"]}</em></span></div>
                 <div style={{color:'var(--text-color)', zIndex:2}} ><span><em>{experiences["Byjus"]["Business"]}</em></span></div>
                 <div style={{color: 'var(--text-color)', zIndex:2,fontWeight: 'bold',width:'fit-content', margin:'0 12px', whiteSpace:'nowrap', wordBreak:'break-word'}}><span>{experiences["Byjus"]["Role"]}</span></div>
             </div>
             <div onClick={()=>{setSelected('FourKites')}} className="flex experience-flex-item company-card" style={experienceFlexChild}>
-                <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/freight_bg.jpg" />
+                <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/freight_bg.jpeg" />
                 <img style={{maxWidth:'50%', zIndex:2}} src={experiences["FourKites"]["Logo"]} alt=""/>
                 <div style={{color: 'var(--text-color)', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["FourKites"]["Span"]}</em></span></div>
                 <div style={{color:'var(--text-color)', zIndex:2}} ><span><em>{experiences["FourKites"]["Business"]}</em></span></div>
@@ -77,7 +77,7 @@ const ExperienceFlexBox = () => {
             </div>
             <div onClick={()=>{setSelected('Temenos')}} className="flex experience-flex-item company-card" style={experienceFlexChild}>
                 {/* <img alt="" style={{position:'absolute', height:'100%', width: '100%', opacity:'0.3'}} src="./images/banks_bg.jpg" /> */}
-                <div className="company-bg" style={{backgroundImage: 'url(./images/banks_bg.jpg)',}}></div>
+                <div className="company-bg" style={{backgroundImage: 'url(./images/banks_bg.jpeg)',}}></div>
                 <img style={{maxWidth:'50%', zIndex:2}} src={experiences["Temenos"]["Logo"]} alt=""/>
                 <div style={{color: 'var(--text-color)', zIndex:2,width:'fit-content', margin:'0 12px'}}><span><em>{experiences["Temenos"]["Span"]}</em></span></div>
                 <div style={{color:'var(--text-color)', zIndex:2}} ><span><em>{experiences["Temenos"]["Business"]}</em></span></div>

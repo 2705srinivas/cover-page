@@ -5,7 +5,7 @@ const UpperSection = () => (
     <div className='left-profile' style={{height: '30%', background: 'var(--text-color)', padding: '20px',
             display:'flex', flexDirection:'row', alignItems:'center', position: 'relative'}}>
         <div  style={{height:'100%', width: "35%"}}>
-            <img style={{width: 'auto', height: '70%', borderRadius:'500px'}} alt='profilePic' src='./images/ProfilePic.jpg'></img>
+            <img style={{width: 'auto', height: '70%', borderRadius:'500px'}} alt='profilePic' src='./images/ProfilePic.jpeg'></img>
             <div className='flex profile' style={{color: '#201834', fontSize: '1.5rem', padding: '8px'}}>
                 <Contacts />
             </div>
