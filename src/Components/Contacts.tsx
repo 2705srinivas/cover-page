@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 export const Contacts = () => {
     return(<>
-        <a data-tip="Linkedin" href="https://www.linkedin.com/in/b-srinivas-7433a3a1/" target="blank">
+        <a data-tip="Linkedin" href="https://www.linkedin.com/in/srinivas-b-7433a3a1/" target="blank">
             <i style={{marginRight: '8px'}} className="fa fa-linkedin-square" aria-hidden="true" />
         </a>
         <CopyToClipboard text="2705srinivas@gmail.com">
